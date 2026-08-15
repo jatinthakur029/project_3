@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tetrisBac-deployment
+  labels:
+    app: tetrisBac
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tetrisBac
+  template:
+    metadata:
+      labels:
+        app: tetrisBac
+    spec:
+      containers:
+      - name: tetrisBac
+        image: jatinthakur029/tetris-backend:latest
+        ports:
+        - containerPort: 3000
