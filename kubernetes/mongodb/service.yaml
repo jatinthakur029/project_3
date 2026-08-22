@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: mongoService
+spec:
+  selector:
+    app: tetrisMong
+  clusterIP: None  
+  ports:
+    - protocol: TCP
+      port: 27017
+      targetPort: 27017
+     

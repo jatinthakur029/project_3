@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mongoSet
+spec:
+  replicas: 1
+  serviceName: mongoService
+  selector:
+    matchLabels:
+      app: tetrisMong
+  template:
+    metadata:
+      labels:
+        app: tetrisMong 
+    spec:
+      containers:
+      - name: tetrisMong 
+        image: mongo
+        volumeMounts:
+        - name: mongo-persistent-storage
+          mountPath: /data/db   
+        ports:
+        - containerPort: 27017   
+  volumeClaimTemplates:
+    - metadata:
+        name: mongo-persistent-storage
+      spec:
+        storageClassName: "fast"
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi  

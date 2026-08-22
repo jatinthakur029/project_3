@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: tetrisBac-deployment
@@ -19,3 +19,8 @@ spec:
         image: jatinthakur029/tetris-backend:latest
         ports:
         - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: backend-config
+        - secretRef:
+            name: backend-secret
