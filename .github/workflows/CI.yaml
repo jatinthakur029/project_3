@@ -4,8 +4,7 @@ on:
     push:
         branches: 
             - main
-        paths:
-            - 'terraform/**'
+        
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -30,11 +29,6 @@ jobs:
             - name: Terraform Validate
               working-directory: terraform
               run: terraform validate
-
-<<<<<<< HEAD
-=======
-            
->>>>>>> 85894983023c8a75da07c9d3ba795f5720f278da
               
             - name: Terraform Plan
               working-directory: terraform
