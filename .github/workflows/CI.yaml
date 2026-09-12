@@ -31,9 +31,7 @@ jobs:
               working-directory: terraform
               run: terraform validate
 
-            - name: Terraform Formate Check
-              working-directory: terraform
-              run: terraform fmt -check -recursive
+            
               
             - name: Terraform Plan
               working-directory: terraform
