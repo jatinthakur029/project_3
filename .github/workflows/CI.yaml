@@ -11,7 +11,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@4
+              uses: actions/checkout@v4
 
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v4
@@ -21,7 +21,7 @@ jobs:
                 aws-region: us-east-1  
 
             - name: Setup Terraform
-              uses: hashicorp/setup-terraform@3
+              uses: hashicorp/setup-terraform@v3
               
             - name: Terraform init
               working-directory: terraform
