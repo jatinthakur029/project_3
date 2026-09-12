@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: mongoSet
+  name: mongoset
 spec:
   replicas: 1
-  serviceName: mongoService
+  serviceName: mongoservice
   selector:
     matchLabels:
-      app: tetrisMong
+      app: tetrismong
   template:
     metadata:
       labels:
-        app: tetrisMong 
+        app: tetrismong 
     spec:
       containers:
-      - name: tetrisMong 
+      - name: tetrismong 
         image: mongo
         volumeMounts:
         - name: mongo-persistent-storage

@@ -1,10 +1,10 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Service
 metadata:
-  name: mongoService
+  name: mongoservice
 spec:
   selector:
-    app: tetrisMong
+    app: tetrismong
   clusterIP: None  
   ports:
     - protocol: TCP
